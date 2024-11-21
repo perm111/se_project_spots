@@ -6,14 +6,11 @@
 
 .profile__add-btn {
   margin-left: auto;
-}
-
-.profile {
-  display: flex;
-}
-
-.profile__add-btn {
-  margin-left: auto;
+  margin-top: auto;
+  background-color: #212121;
+  color: #fff;
+  width: 149px;
+  height: 52px;
 }
 
 .profile__avatar {
@@ -28,7 +25,10 @@
 }
 
 .profile__edit-btn {
-  margin-top: auto;
+  margin-top: 12px;
+  margin-right: auto;
+  background-color: transparent;
+  border: none;
 }
 
 .profile__name {

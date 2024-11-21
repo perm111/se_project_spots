@@ -27,6 +27,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
+  font-size: 20px;
 }
 
 @media screen and (max-width: 627px) {
