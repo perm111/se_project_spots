@@ -5,18 +5,29 @@
 }
 
 .profile__add-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
   margin-left: auto;
   margin-top: auto;
   background-color: #212121;
-  color: #fff;
+  color: rgba(252, 245, 229, 1);
   width: 149px;
   height: 52px;
+  border-bottom: none;
+  border-radius: 8px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
 }
 
 .profile__avatar {
   margin-right: 20px;
   height: 190px;
   width: 190px;
+  border-radius: 5px;
 }
 
 .profile__column {
@@ -25,10 +36,18 @@
 }
 
 .profile__edit-btn {
-  margin-top: 12px;
+  display: flex;
+  width: 120px;
+  justify-content: space-between;
+  margin-top: auto;
   margin-right: auto;
+  align-items: center;
   background-color: transparent;
   border: none;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
 }
 
 .profile__name {
