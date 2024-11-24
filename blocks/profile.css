@@ -76,11 +76,10 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   max-width: 420px;
-
-font-family: Poppins;
-text-align: left;
-text-underline-position: from-font;
-text-decoration-skip-ink: none;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 
 }
 
