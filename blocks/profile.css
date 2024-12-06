@@ -43,11 +43,10 @@
 
 .profile__edit-btn {
   display: flex;
+  gap: 8px;
   opacity: 70%;
-  width: 120px;
-  justify-content: space-between;
+  /* width: 120px; */
   margin-top: auto;
-  margin-right: auto;
   align-items: center;
   background-color: transparent;
   border: none;
@@ -115,6 +114,8 @@
 
   .profile__column {
     margin: 0 0 20px;
+    justify-content: center;
+    align-items: center;
   }
 
   .profile__avatar {
@@ -126,9 +127,11 @@
   .profile__add-btn {
     margin: 0%;
     width: 100%;
-
+  }
   .profile__edit-btn {
     margin: 0%;
     width: 100%;
+    text-align: center;
+    justify-content: center;
   }
 }
