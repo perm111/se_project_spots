@@ -25,4 +25,17 @@ const initialCards = [
   },
 ];
 
-console.log(initialCards);
+const editModal = document.querySelector("#edit-Modal"); // The whole modal
+const profileEditButton = document.querySelector(".profile__edit-btn"); // The pencil picture button
+const editModalCloseBtn = editModal.querySelector(".modal__close-btn"); //close button inside Modal
+
+function openModal() {
+  editModal.classList.add("modal_opened"); // add class to make modal visible
+}
+
+function closeModal() {
+  editModal.classList.remove("modal_opened"); // remove class to make modal invisible
+}
+
+profileEditButton.addEventListener("click", openModal);
+editModalCloseBtn.addEventListener("click", closeModal);
