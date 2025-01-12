@@ -30,15 +30,23 @@ const profileDescription = document.querySelector(".profile__description");
 const profileEditButton = document.querySelector(".profile__edit-btn"); // The pencil picture button
 
 const editModal = document.querySelector("#edit-Modal"); // The whole modal
+
+//Modal
 const editModalCloseBtn = editModal.querySelector(".modal__close-btn"); //close button inside Modal
-const editModalNameInput = editModal.querySelector("#profile-name-input"); //modal profile name - search just the modal
-const editModalDescriptionInput = editModal.querySelector(
+
+//const editModalNameInput = editModal.querySelector("#profile-name-input"); //modal profile name - search just the modal
+//const editModalDescriptionInput = editModal.querySelector("#profile-description-input");//modal profile name - search just the modal
+
+const editProfileForm = document.forms["edit-profile"];
+const editModalNameInput = editProfileForm.querySelector("#profile-name-input");
+const editModalDescriptionInput = editProfileForm.querySelector(
   "#profile-description-input"
-); //modal profile name - search just the modal
+);
+
+//const editFormElement = editModal.querySelector(".modal__form");
 const editFormElement = editModal.querySelector(".modal__form");
 const cardTemplate = document.querySelector("#card-template"); // create a const to accept a card
 const cardsList = document.querySelector(".cards__list");
-
 
 function openModal() {
   // Take the text content from the profile name
@@ -66,24 +74,26 @@ profileEditButton.addEventListener("click", openModal);
 editModalCloseBtn.addEventListener("click", closeModal);
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 
-function getCardElement(data) // get the element from an array
-{console.log("data:",data);
+function getCardElement(data) {
+  // get the element from an array
+  console.log("data:", data);
   // access template and pull .card class
 
-  const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
+  const cardElement = cardTemplate.content
+    .querySelector(".card")
+    .cloneNode(true);
 
   const cardNameEl = cardElement.querySelector(".card__title");
   cardNameEl.textContent = data.name;
 
   const cardImageEl = cardElement.querySelector(".card__image");
   cardImageEl.src = data.link;
+  cardImageEl.alt = cardNameEl.textContent;
 
   return cardElement;
 }
 
-
-for (let i = 0; i < initialCards.length; i++)
-{const cardElement =  getCardElement(initialCards[i]);
-cardsList.prepend(cardElement);
-
+for (let i = 0; i < initialCards.length; i++) {
+  const cardElement = getCardElement(initialCards[i]);
+  cardsList.prepend(cardElement);
 }

@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="page">
-      <header class="header header__red">
+      <header class="header">
         <img src="./images/Logo.svg" alt="Spot Logo" class="header__logo" />
       </header>
       <main class="content">
@@ -35,19 +35,16 @@
           </button>
         </section>
         <section class="cards page__section">
-
           <ul class="cards__list">
-          <template id="card-template">
-            <li class="card">
-              <img class="card__image" src="" alt="" />
-              <div class="card__content">
-                <h2 class="card__title"></h2>
-                <button type="button" class="card__like-btn"></button>
-              </div>
-            </li>
-          </template>
-
-
+            <template id="card-template">
+              <li class="card">
+                <img class="card__image" src="" alt="" />
+                <div class="card__content">
+                  <h2 class="card__title"></h2>
+                  <button type="button" class="card__like-btn"></button>
+                </div>
+              </li>
+            </template>
           </ul>
         </section>
       </main>
@@ -59,7 +56,7 @@
         <div class="modal__container">
           <h2 class="modal__title">Edit profile</h2>
           <button type="button" class="modal__close-btn"></button>
-          <form name="edit-profile" class="modal__form">
+          <form name="edit-profile" id="modal-form" class="modal__form">
             <label for="profile-name-input" class="modal__label">
               Name
               <input
