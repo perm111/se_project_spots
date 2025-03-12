@@ -1,0 +1,155 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(0, 0, 0, 0.5);
+  visibility: hidden;
+  padding: 0 16px;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+    color: white;
+  }
+  50% {
+    opacity: 1;
+    color: red;
+  }
+  100% {
+    opacity: 1;
+    color: yellow;
+  }
+}
+
+.blink {
+  animation: blink 5s infinite;
+  font-weight: 400;
+  font-size: x-large;
+}
+
+.modal_opened {
+  visibility: visible;
+}
+
+.modal__container {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  max-width: 730px;
+  padding: 32px 50px;
+  box-sizing: border-box;
+}
+
+.model__content_type_preview {
+  padding: 0;
+}
+
+.modal__image {
+  width: 100%;
+  object-fit: cover;
+  max-width: 80vw;
+  max-height: 80vh;
+}
+.modal__close-btn {
+  position: absolute;
+  background-color: #fff;
+  cursor: pointer;
+  right: 50px;
+  top: 32px;
+  width: 40px;
+  height: 40px;
+  background-image: url(/images/CloseIcon.png);
+  border: none;
+  opacity: 0.5;
+}
+
+.modal__close_type_preview {
+  background-image: "../images/close-light.png";
+  top: 0;
+  right: 16px;
+  opacity: 1;
+}
+
+.modal__submit-btn {
+  background-color: black;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 8px;
+  padding: 18px 0;
+  width: 156px;
+}
+.modal__title {
+  margin: 0 0 32px;
+  font-family: Poppins;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.modal__label {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  color: rgba(33, 33, 33, 0.7);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 17.6px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.modal__input {
+  cursor: pointer;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: rgba(33, 33, 33, 1);
+  border: 1px solid rgba(33, 33, 33, 0.4);
+  width: Fixed (630px) px;
+  height: Hug (52px) px;
+  padding: 16px 12px 16px 12px;
+  gap: 10px;
+  border-radius: 8px;
+  opacity: 0px;
+}
+
+@media screen and (max-width: 627px) {
+  .modal {
+    padding: 0 10px;
+  }
+  .modal__container {
+    padding: 12px;
+  }
+
+  .modal__title {
+    font-size: 20px;
+    margin: 10px 0 34px;
+  }
+
+  .modal__close-btn {
+    top: 12px;
+    right: 12px;
+  }
+
+  .modal__label {
+    margin-bottom: 24px;
+  }
+
+  .modal__submit-btn {
+    width: 100%;
+  }
+}
