@@ -3,17 +3,26 @@
 }
 
 li.card .card__Delete-btn {
+  top: 10px;
+  right: 10px;
+  width: 23px;
+  height: 23px;
+
   position: absolute;
   background-image: url(../images/DeleteIcon.png);
   background-color: transparent;
 
-  top: 10px;
-  right: 10px;
-  width: 50px;
-  height: 50px;
   border: none;
   border-radius: 5%;
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.8); /* Makes it stand out */
+  background-size: contain;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+li.card .card__Delete-btn:hover {
+  transform: scale(1.1);
+  background-color: rgba(225, 7, 7, 0.884); /* Change on hover for emphasis */
 }
 
 .card__content {
@@ -32,15 +41,6 @@ li.card .card__Delete-btn {
   border-radius: 8px;
 }
 
-.card__Delete-btn {
-  background-image: url(../images/DeleteBtn.svg);
-  background-repeat: no-repeat;
-  height: 23px;
-  width: 23px;
-  border: none;
-  background-color: transparent;
-  opacity: 50%;
-}
 .card__like-btn {
   background-image: url(../images/heart.svg);
   background-repeat: no-repeat;
@@ -90,6 +90,6 @@ li.card .card__Delete-btn {
   .card__title {
     line-height: 16px;
     font-size: 16px;
-    max-width: 288px;
+    max-width: 264px;
   }
 }

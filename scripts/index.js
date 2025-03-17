@@ -37,6 +37,8 @@ const profileEditButton = document.querySelector(".profile__edit-btn"); // The p
 
 const editModal = document.querySelector("#edit-Modal");
 const editProfileForm = editModal.querySelector(".modal__form");
+const profileForm = document.forms["profile-form"];
+
 const editModalCloseBtn = editModal.querySelector(".modal__close-btn"); //close button inside Modal
 const editModalNameInput = editProfileForm.querySelector("#profile-name-input");
 const editModalDescriptionInput = editProfileForm.querySelector(
@@ -57,10 +59,7 @@ const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
 
 function openEditModal() {
-  // Take the text content from the profile name
-  //and assign it to the value of the text input
-  editModalNameInput.value = profileName.textContent;
-  editModalDescriptionInput.value = profileDescription.textContent;
+  getNameDescription();
   openModal(editModal);
 }
 
@@ -92,11 +91,11 @@ function handleEditFormSubmit(evt) {
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
 
-  // problem
-
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
+  evt.target.reset();
+
   closeModal(cardModal);
 }
 
@@ -120,10 +119,11 @@ function getCardElement(data) {
     cardLikeBtn.classList.toggle("card__like-btn_liked");
   });
 
-  cardDeleteBtn.addEventListener("click", () => {
-    console.log("Delete button pressed");
-    const card = document.querySelector(".card");
-    card.remove();
+  cardDeleteBtn.addEventListener("click", (event) => {
+    if (event.target.matches(".card__Delete-btn")) {
+      const card = event.target.closest(".card");
+      card.remove();
+    }
   });
 
   cardImageEl.addEventListener("click", () => {
