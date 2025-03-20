@@ -37,7 +37,6 @@ const profileEditButton = document.querySelector(".profile__edit-btn"); // The p
 
 const editModal = document.querySelector("#edit-Modal");
 const editProfileForm = editModal.querySelector(".modal__form");
-const profileForm = document.forms["profile-form"];
 
 const editModalCloseBtn = editModal.querySelector(".modal__close-btn"); //close button inside Modal
 const editModalNameInput = editProfileForm.querySelector("#profile-name-input");
@@ -121,8 +120,7 @@ function getCardElement(data) {
 
   cardDeleteBtn.addEventListener("click", (event) => {
     if (event.target.matches(".card__Delete-btn")) {
-      const card = event.target.closest(".card");
-      card.remove();
+      cardElement.remove();
     }
   });
 

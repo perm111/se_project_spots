@@ -9,7 +9,7 @@ li.card .card__Delete-btn {
   height: 23px;
 
   position: absolute;
-  background-image: url(../images/DeleteIcon.png);
+  background-image: url(../images/DeleteIcon.svg);
   background-color: transparent;
 
   border: none;
@@ -52,18 +52,18 @@ li.card .card__Delete-btn:hover {
 }
 
 .card__like-btn:hover {
-  background-image: url(..//images/like-icon-not-liked.png);
+  background-image: url(..//images/like-icon-not-liked.svg);
   opacity: 100%;
   cursor: pointer;
 }
 
 .card__like-btn_liked {
-  background-image: url(../images/like-icon-liked.png);
+  background-image: url(../images/like-icon-liked.svg);
   opacity: 100%;
 }
 
 .card__like-btn_liked:hover {
-  background-image: url(../images/like-icon-liked-hover.png);
+  background-image: url(../images/like-icon-liked-hover.svg);
   opacity: 100%;
 }
 
