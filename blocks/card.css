@@ -48,12 +48,14 @@ li.card .card__Delete-btn:hover {
   width: 23px;
   border: none;
   background-color: transparent;
-  opacity: 40%;
+  opacity: 100%;
 }
 
 .card__like-btn:hover {
   background-image: url(..//images/like-icon-not-liked.svg);
   opacity: 100%;
+  height: 23px;
+  width: 23px;
   cursor: pointer;
 }
 
