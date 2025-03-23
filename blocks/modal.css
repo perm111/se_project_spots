@@ -16,25 +16,37 @@
   opacity: 0;
   transition: visibility 0.3s, opacity 0.3s ease-in;
   border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
 }
 
-@keyframes blink {
+.modal__content {
+  position: relative;
+  max-width: 90%; /* Responsive max width */
+  margin: auto;
+}
+
+.modal__caption {
+  margin: 10px 0;
+  text-align: center; /* Center caption */
+  padding: 0;
+  display: "inline-block";
+  background-color: "black";
+  color: white;
+  padding: "5px 10px";
+  border-radius: "5px";
+  opacity: 1;
+}
+
+@keyframes noblink {
   0% {
     opacity: 1;
-    color: white;
-  }
-  50% {
-    opacity: 1;
-    color: red;
-  }
-  100% {
-    opacity: 1;
-    color: yellow;
+    color: black;
   }
 }
 
-.blink {
-  animation: blink 5s infinite;
+.noblink {
   font-weight: 400;
   font-size: x-large;
 }
@@ -56,6 +68,12 @@
 
 .modal__content_type_preview {
   padding: 0;
+  display: "inline-block";
+  background-color: "red";
+  color: "white";
+  padding: "5px 10px";
+  border-radius: "5px";
+  margin: "0";
 }
 
 .modal__image {
@@ -79,9 +97,18 @@
 
 .modal__close-btn_type_preview {
   background-image: "../images/close-light.svg";
-  top: 0;
-  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
   opacity: 1;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: black;
 }
 
 .modal__submit-btn {

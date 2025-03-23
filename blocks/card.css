@@ -5,8 +5,8 @@
 li.card .card__Delete-btn {
   top: 10px;
   right: 10px;
-  width: 23px;
-  height: 23px;
+  width: 32px;
+  height: 32px;
 
   position: absolute;
   background-image: url(../images/DeleteIcon.svg);
@@ -15,7 +15,7 @@ li.card .card__Delete-btn {
   border: none;
   border-radius: 5%;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.8); /* Makes it stand out */
+
   background-size: contain;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }

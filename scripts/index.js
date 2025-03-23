@@ -108,7 +108,6 @@ function getCardElement(data) {
   const cardTitleEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardLikeBtn = cardElement.querySelector(".card__like-btn");
-
   const cardDeleteBtn = cardElement.querySelector(".card__Delete-btn");
   cardTitleEl.textContent = data.name;
 
@@ -129,8 +128,6 @@ function getCardElement(data) {
     previewModalImageEl.src = data.link;
     previewModalImageEl.alt = data.name;
     previewModalCaptionEl.textContent = data.name;
-    //previewModalCaptionEl.style.color = "white";
-    previewModalCaptionEl.classList.add("blink");
   });
 
   return cardElement;
