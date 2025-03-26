@@ -7,22 +7,18 @@ li.card .card__Delete-btn {
   right: 10px;
   width: 32px;
   height: 32px;
-
   position: absolute;
   background-image: url(../images/DeleteIcon.svg);
   background-color: transparent;
-
   border: none;
   border-radius: 5%;
-  cursor: pointer;
-
   background-size: contain;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 li.card .card__Delete-btn:hover {
   transform: scale(1.1);
-  background-color: rgba(225, 7, 7, 0.884); /* Change on hover for emphasis */
+  background-image: url(../images/DeleteIconHover.svg);
+  cursor: pointer;
 }
 
 .card__content {
@@ -62,6 +58,7 @@ li.card .card__Delete-btn:hover {
 .card__like-btn_liked {
   background-image: url(../images/like-icon-liked.svg);
   opacity: 100%;
+  background-color: transparent;
 }
 
 .card__like-btn_liked:hover {
