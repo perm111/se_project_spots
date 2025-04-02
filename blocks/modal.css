@@ -65,6 +65,7 @@
   padding: 32px 50px;
   box-sizing: border-box;
   border-radius: 8px;
+  margin: 50px;
 }
 
 .modal__image {
@@ -95,7 +96,7 @@
   font-size: 24px;
 }
 
-.modal__container_type_preview {
+.modal__content_type_preview {
   padding: 0;
 }
 
@@ -151,10 +152,13 @@
 
 @media screen and (max-width: 627px) {
   .modal {
-    padding: 0 10px;
+    /* padding: 10 10px; */
   }
   .modal__container {
     padding: 12px;
+    max-width: 80vw;
+    max-height: 80vh;
+
   }
 
   .modal__title {
