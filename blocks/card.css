@@ -2,7 +2,7 @@
   position: relative;
 }
 
-li.card .card__Delete-btn {
+li.card .card__delete-btn {
   top: 10px;
   right: 10px;
   width: 32px;
@@ -15,7 +15,7 @@ li.card .card__Delete-btn {
   background-size: contain;
 }
 
-li.card .card__Delete-btn:hover {
+li.card .card__delete-btn:hover {
   transform: scale(1.1);
   background-image: url(../images/DeleteIconHover.svg);
   cursor: pointer;

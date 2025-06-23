@@ -36,17 +36,18 @@ const profileDescription = document.querySelector(".profile__description");
 const profileEditButton = document.querySelector(".profile__edit-btn"); // The pencil picture button
 
 const editModal = document.querySelector("#edit-Modal");
-const editProfileForm = editModal.querySelector(".modal__form");
+const editProfileForm = editModal.querySelector(settings.formSelector);
 
 const editModalCloseBtn = editModal.querySelector(".modal__close-btn"); //close button inside Modal
 const editModalNameInput = editProfileForm.querySelector("#profile-name-input");
 const editModalDescriptionInput = editProfileForm.querySelector(
   "#profile-description-input"
 );
-const editFormElement = editModal.querySelector(".modal__form");
+const editFormElement = editModal.querySelector(settings.formSelector);
 
 const cardModal = document.querySelector("#add-card-Modal");
-const cardForm = cardModal.querySelector(".modal__form");
+const cardForm = cardModal.querySelector(settings.formSelector);
+const cardSubmitBtn = cardModal.querySelector(settings.submitButtonSelector);
 const cardModalBtn = document.querySelector(".profile__add-btn");
 const cardModalCloseBtn = cardModal.querySelector(".modal__close-btn");
 const cardNameInput = cardModal.querySelector("#add-card-name-input");
@@ -94,6 +95,7 @@ function handleAddCardSubmit(evt) {
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   evt.target.reset();
+  disableButton(cardSubmitBtn);
 
   closeModal(cardModal);
 }
@@ -108,7 +110,7 @@ function getCardElement(data) {
   const cardTitleEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardLikeBtn = cardElement.querySelector(".card__like-btn");
-  const cardDeleteBtn = cardElement.querySelector(".card__Delete-btn");
+  const cardDeleteBtn = cardElement.querySelector(".card__delete-btn");
   cardTitleEl.textContent = data.name;
 
   cardImageEl.src = data.link;
@@ -118,7 +120,7 @@ function getCardElement(data) {
   });
 
   cardDeleteBtn.addEventListener("click", (event) => {
-    if (event.target.matches(".card__Delete-btn")) {
+    if (event.target.matches(".card__delete-btn")) {
       cardElement.remove();
     }
   });
