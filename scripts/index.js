@@ -160,3 +160,24 @@ previewModalCloseBtn.addEventListener("click", () => {
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 cardForm.addEventListener("submit", handleAddCardSubmit);
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeModal(editModal);
+     closeModal(cardModal);
+    closeModal(previewModal);
+  }
+});
+
+editModal.addEventListener("click", function (event) {
+    if (event.target === editModal) {
+          closeModal(editModal);
+      }
+});
+
+cardModal.addEventListener("click", function (event) {
+    if (event.target === cardModal) {
+          closeModal(cardModal);
+      }
+});
+

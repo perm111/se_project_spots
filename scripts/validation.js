@@ -1,4 +1,4 @@
-debugger ;
+//debugger ;
 const showInputError = (formEl, inputEl, errorMsg, config) => {
   const errorMsgEl = document.querySelector(`#${inputEl.id}-error`);
   errorMsgEl.textContent = errorMsg;
