@@ -36,18 +36,6 @@
   opacity: 1;
 }
 
-@keyframes noblink {
-  0% {
-    opacity: 1;
-    color: black;
-  }
-}
-
-.noblink {
-  font-weight: 400;
-  font-size: x-large;
-}
-
 .modal_opened {
   visibility: visible;
   opacity: 1;
@@ -81,13 +69,13 @@
   top: 32px;
   width: 40px;
   height: 40px;
-  background-image: url(/images/CloseIcon.svg);
+  background-image: url(../images/CloseIcon.svg);
   border: none;
   opacity: 0.5;
 }
 
 .modal__close-btn_type_preview {
-  background-image: url(/images/close-light.svg);
+  background-image: url(../images/close-light.svg);
   border-radius: 8px;
   opacity: 1;
   top: 0;
@@ -198,7 +186,7 @@ config.inputSelector {
   }
 
   .modal__image {
-    min-width: 100%;
+    min-width: 110%;
   }
 }
 

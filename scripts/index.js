@@ -35,18 +35,18 @@ const profileName = document.querySelector(".profile__name"); //profile name
 const profileDescription = document.querySelector(".profile__description");
 const profileEditButton = document.querySelector(".profile__edit-btn"); // The pencil picture button
 const editModal = document.querySelector("#edit-Modal");
-const editProfileForm = editModal.querySelector(settings.formSelector);
+const editProfileForm = editModal.querySelector(getSettings().formSelector);
 const editModalBtn = document.querySelector(".profile__edit-btn");
 const closeButtons = document.querySelectorAll(".modal__close-btn");
 const editModalNameInput = editProfileForm.querySelector("#profile-name-input");
 const editModalDescriptionInput = editProfileForm.querySelector(
   "#profile-description-input"
 );
-const editFormElement = editModal.querySelector(settings.formSelector);
+const editFormElement = editModal.querySelector(getSettings().formSelector);
 const editFormSubmitBtn = editFormElement.querySelector(".modal__submit-btn");
 const cardModal = document.querySelector("#add-card-Modal");
-const cardForm = cardModal.querySelector(settings.formSelector);
-const cardSubmitBtn = cardModal.querySelector(settings.submitButtonSelector);
+const cardForm = cardModal.querySelector(getSettings().formSelector);
+const cardSubmitBtn = cardModal.querySelector(getSettings().submitButtonSelector);
 const cardModalBtn = document.querySelector(".profile__add-btn");
 const cardNameInput = cardModal.querySelector("#add-card-name-input");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
@@ -59,12 +59,8 @@ editModalBtn.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
 
-  resetValidation(editFormElement, [
-    editModalNameInput,
-    editModalDescriptionInput,
-  ]);
-  disableButton(editFormSubmitBtn, settings);
-
+  resetValidation(editFormElement, [editModalNameInput,editModalDescriptionInput], getSettings());
+  disableButton(editFormSubmitBtn, getSettings());
   openModal(editModal);
 });
 
@@ -114,7 +110,7 @@ function handleAddCardSubmit(evt) {
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   evt.target.reset();
-  disableButton(cardSubmitBtn, settings);
+  disableButton(cardSubmitBtn, getSettings());
   closeModal(cardModal);
 }
 
@@ -169,7 +165,7 @@ cardModalBtn.addEventListener("click", () => {
 });
 
 editFormElement.addEventListener("submit", (event) =>
-  handleEditFormSubmit(event, settings)
+  handleEditFormSubmit(event, getSettings())
 );
 cardForm.addEventListener("submit", handleAddCardSubmit);
 
