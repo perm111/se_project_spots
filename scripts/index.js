@@ -35,7 +35,8 @@ const profileName = document.querySelector(".profile__name"); //profile name
 const profileDescription = document.querySelector(".profile__description");
 const profileEditButton = document.querySelector(".profile__edit-btn"); // The pencil picture button
 const editModal = document.querySelector("#edit-Modal");
-const editProfileForm = editModal.querySelector(getSettings().formSelector);
+const editProfileForm = document.forms["editprofile"];
+
 const editModalBtn = document.querySelector(".profile__edit-btn");
 const closeButtons = document.querySelectorAll(".modal__close-btn");
 const editModalNameInput = editProfileForm.querySelector("#profile-name-input");
@@ -45,8 +46,14 @@ const editModalDescriptionInput = editProfileForm.querySelector(
 const editFormElement = editModal.querySelector(getSettings().formSelector);
 const editFormSubmitBtn = editFormElement.querySelector(".modal__submit-btn");
 const cardModal = document.querySelector("#add-card-Modal");
-const cardForm = cardModal.querySelector(getSettings().formSelector);
-const cardSubmitBtn = cardModal.querySelector(getSettings().submitButtonSelector);
+//const cardForm = cardModal.querySelector(getSettings().formSelector);
+
+const cardForm = document.forms["add-card"];
+
+
+const cardSubmitBtn = cardModal.querySelector(
+  getSettings().submitButtonSelector
+);
 const cardModalBtn = document.querySelector(".profile__add-btn");
 const cardNameInput = cardModal.querySelector("#add-card-name-input");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
@@ -59,7 +66,11 @@ editModalBtn.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
 
-  resetValidation(editFormElement, [editModalNameInput,editModalDescriptionInput], getSettings());
+  resetValidation(
+    editFormElement,
+    [editModalNameInput, editModalDescriptionInput],
+    getSettings()
+  );
   disableButton(editFormSubmitBtn, getSettings());
   openModal(editModal);
 });
@@ -79,6 +90,9 @@ function handleEscape(evt) {
 function openModal(modal) {
   modal.classList.add("modal_opened"); // add class to make modal visible
   document.addEventListener("keydown", handleEscape);
+
+  // Fixing the last review notes :
+  document.addEventListener("click", overlayClickListener);
 }
 
 function closeModal(modal) {
@@ -97,7 +111,7 @@ function handleEditFormSubmit(evt, settings) {
   profileDescription.textContent = editModalDescriptionInput.value;
   resetValidation(
     editFormElement,
-    [cardNameInput, editModalDescriptionInput],
+    [editModalNameInput, editModalDescriptionInput],
     settings
   );
   closeModal(editModal);
@@ -169,31 +183,33 @@ editFormElement.addEventListener("submit", (event) =>
 );
 cardForm.addEventListener("submit", handleAddCardSubmit);
 
-// document.addEventListener("keydown", function (event) {
-//   if (event.key === "Escape") {
+// Fixing the last review notes . Commented out 3 addEventListeners below
+
+// editModal.addEventListener("click", function (event) {
+//   if (event.target === editModal) {
 //     closeModal(editModal);
+//   }
+// });
+
+// cardModal.addEventListener("click", function (event) {
+//   if (event.target === cardModal) {
 //     closeModal(cardModal);
+//   }
+// });
+
+// previewModal.addEventListener("click", function (event) {
+//   if (event.target === previewModal) {
 //     closeModal(previewModal);
 //   }
 // });
 
-editModal.addEventListener("click", function (event) {
-  if (event.target === editModal) {
-    closeModal(editModal);
-  }
-});
+// Fixing the last review notes :
 
-cardModal.addEventListener("click", function (event) {
-  if (event.target === cardModal) {
-    closeModal(cardModal);
+const overlayClickListener = (evt) => {
+  if (evt.target.classList.contains("modal")) {
+       closeModal(document.querySelector(".modal_opened"));
   }
-});
-
-previewModal.addEventListener("click", function (event) {
-  if (event.target === previewModal) {
-    closeModal(previewModal);
-  }
-});
+};
 
 function renderCard(item, method = "prepend") {
   const cardElement = getCardElement(item);

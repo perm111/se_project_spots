@@ -2,7 +2,7 @@
   position: relative;
 }
 
-li.card .card__delete-btn {
+.card__delete-btn {
   top: 10px;
   right: 10px;
   width: 32px;
@@ -13,9 +13,10 @@ li.card .card__delete-btn {
   border: none;
   border-radius: 5%;
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
-li.card .card__delete-btn:hover {
+.card__delete-btn:hover {
   transform: scale(1.1);
   background-image: url(../images/DeleteIconHover.svg);
   cursor: pointer;
@@ -44,7 +45,7 @@ li.card .card__delete-btn:hover {
   width: 23px;
   border: none;
   background-color: transparent;
-  opacity: 100%;
+  opacity: 40%;
 }
 
 .card__like-btn:hover {
