@@ -71,11 +71,12 @@
   height: 40px;
   background-image: url(../images/CloseIcon.svg);
   border: none;
+  opacity: 0.4;
 }
 
 .modal__close-btn:hover {
   cursor: pointer;
-  opacity: 0.4;
+  opacity: 0.1;
 }
 
 .modal__close-btn_type_preview {
@@ -102,14 +103,16 @@
   padding: 18px 0;
   width: 156px;
   border: none;
-}
+  border-radius: 16px;
+  }
 
 .modal__title {
   margin: 0 0 32px;
-  font-family: Poppins;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
   font-size: 32px;
   font-weight: 500;
   line-height: 1;
+  color: #FCF5E5;
 }
 
 .modal__label {
